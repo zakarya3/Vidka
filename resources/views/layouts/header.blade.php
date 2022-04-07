@@ -100,20 +100,13 @@
                                                 <a href="index.html"><span>Acceuil</span></a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="service.html"><span>Produits</span></a>
+                                                <a href="{{ url('/') }}"><span>Produits</span></a>
                                                 <ul class="drop-menu">
-                                                    <li>
-                                                        <a href="">ENGINS DE TRANSPORT ET VEHICUL</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">ENGINS DE MATERIEL DE LEVAGE</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">ENGINS BTP</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">ENGINS D’ASSAINISSEMENT ET NETTOYAGE</a>
-                                                    </li>
+                                                    @foreach ($category as $item)
+                                                        <li>
+                                                            <a href="{{ url('products-items/'.$item->name) }}">{{ $item->name }}</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                             <li class="">
@@ -160,31 +153,13 @@
                                     </span>
                                         </a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="service.html">
-                                                    <span class="mm-text">Produits</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="mm-text">ENGINS D’ASSAINISSEMENT ET NETTOYAGE</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="mm-text">ENGINS D’ASSAINISSEMENT ET NETTOYAGE</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="mm-text">ENGINS D’ASSAINISSEMENT ET NETTOYAGE</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="mm-text">ENGINS D’ASSAINISSEMENT ET NETTOYAGE</span>
-                                                </a>
-                                            </li>
+                                            @foreach ($category as $item)
+                                                <li>
+                                                    <a href="{{ url('products-items/'.$item->name)}}">
+                                                        <span class="mm-text">{{ $item->name }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li>

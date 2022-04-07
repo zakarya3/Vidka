@@ -25,11 +25,35 @@ use App\Http\Controllers\Cart\CheckoutController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontController::class,'index']);
+Route::get('contact', [FrontController::class,'contact']);
+Route::put('contact-message', [FrontController::class,'send']);
+// Route::get('/all-categories/{name}',[FrontController::class,'category']);
+Route::get('references', [FrontController::class,'reference']);
+
+Route::get('/products-items/{name}',[FrontController::class,'products']);
+Route::get('/products/{name}/{id}',[FrontController::class,'products_id']);
+
+Route::get('/product/{cat}/{name}',[FrontController::class,'product']);
+
+
+Route::get('cart', [CartPController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartPController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartPController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartPController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartPController::class, 'clearAllCart'])->name('cart.clear');
 
 Auth::routes();
+Route::get('checkout', [CheckoutController::class, 'index'])->name('check.list');
+Route::post('payment', [CartPController::class, 'addUser']);
+Route::post('place-order', [CheckoutController::class, 'placeorder']);
+Route::get('checkout-payment', [CheckoutController::class, 'index_pay']);
+Route::put('payment-method', [CheckoutController::class, 'paymentmethod']);
+Route::get('checkout-complete', [CheckoutController::class, 'index_comp']);
+
+
+Route::get('myorders', [UserController::class, 'index']);
+Route::get('view-order/{id}', [UserController::class, 'view']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'isAdmin'])->group(function () {

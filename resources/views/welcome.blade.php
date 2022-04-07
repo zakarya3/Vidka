@@ -209,7 +209,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/1-4-370x254.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -226,7 +226,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/pole manutention.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -243,7 +243,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/materiel-construction.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -260,7 +260,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/net.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -277,7 +277,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/collect.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -294,7 +294,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/materiel-construction.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
@@ -311,7 +311,7 @@
                             <div class="swiper-slide">
                                 <div class="service-item">
                                     <div class="service-img">
-                                        <a href="service.html">
+                                        <a href="{{ url('/contact') }}">
                                             <img src="{{ asset('assets/service/medium-size/arg.jpg') }}" alt="Service Image">
                                         </a>
                                         <div class="add-action text-white" style="height: 100px;">
