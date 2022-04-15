@@ -33,6 +33,7 @@ Route::get('references', [FrontController::class,'reference']);
 
 Route::get('/products-items/{name}',[FrontController::class,'products']);
 Route::get('/products/{name}/{id}',[FrontController::class,'products_id']);
+Route::post('search', [FrontController::class,'search']);
 
 Route::get('/product/{cat}/{name}',[FrontController::class,'product']);
 

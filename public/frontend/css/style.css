@@ -19605,7 +19605,9 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-img a img {
-  width: 100%;
+  width: 60%;
+  height: 30vh;
+  object-fit: contain;
 }
 
 .product-img .add-action {
@@ -19804,6 +19806,8 @@ input[type="checkbox"]:checked + label:after {
 /* ---Product Detail Slider--- */
 .product-detail-slider .single-img img {
   width: 100%;
+  height: 50vh;
+  object-fit: contain;
 }
 
 /*----------------------------------------*/

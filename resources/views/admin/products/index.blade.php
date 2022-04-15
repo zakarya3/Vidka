@@ -23,7 +23,7 @@
                     </div>
                     <div class="row">
                       <label for="">Marque</label>
-                      <select class="form-select" required name="brand">
+                      <select class="form-select" name="brand">
                           <option value="">Select a brand</option>
                           @foreach ($brand as $item)
                           <option value="{{ $item->id }}">{{ $item->brand_name }}</option>
@@ -41,7 +41,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Quantité</label>
-                          <input type="number" name="qty" required class="form-control">
+                          <input type="number" name="qty" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -55,7 +55,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Référence</label>
-                          <input type="text" name="ref" required class="form-control">
+                          <input type="text" name="ref" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -71,7 +71,7 @@
                       <div class="col-md-12">
                         <div class="input-group mb-3">
                           <label class="input-group-text" for="image">Fiche Technique</label>
-                          <input type="file" required name="fiche" class="form-control" id="image">
+                          <input type="file" name="fiche" class="form-control" id="image">
                         </div>
                       </div>
                     </div>

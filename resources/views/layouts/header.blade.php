@@ -352,6 +352,8 @@
 <!-- Global Vendor, plugins JS -->
 
 <!-- Vendor JS -->
+<script src="{{ asset('frontend/js/jquery.js') }}"></script>
+<script src="{{ asset('frontend/js/qty.js') }}"></script>
 <script src="{{ asset('frontend/js/vendor/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/js/vendor/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('frontend/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>

@@ -18,11 +18,11 @@ return new class extends Migration
             $table->bigInteger('cate_id');
             $table->string('product_name');
             $table->text('product_description')->nullable();
-            $table->bigInteger('brand_id');
+            $table->bigInteger('brand_id')->nullable();
             $table->string('image');
-            $table->string('fiche');
-            $table->string('qty');
-            $table->string('product_reference');
+            $table->string('fiche')->nullable();
+            $table->string('qty')->nullable();
+            $table->string('product_reference')->nullable();
             $table->float('price')->nullable();
             $table->timestamps();
         });

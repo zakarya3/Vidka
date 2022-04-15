@@ -19,8 +19,14 @@
                             <div class="sidebar-area">
                                 <div class="sidebar-widget sidebar-searchbar sidebar-common mb-8" data-bg-color="#f4f8ff">
                                     <h3 class="sidebar-title mb-5">Rechercher</h3>
-                                    <form class="sidebar-form">
-                                        <input class="searchbox-input" type="text" placeholder="Tapez votre mot-clé...">
+                                    <form class="sidebar-form" action="{{ url('search') }}" method="post">
+                                        {{ csrf_field() }}
+                                        <input class="searchbox-input" name="item" list="datalistOptions" placeholder="Tapez votre mot-clé...">
+                                        <datalist id="datalistOptions">
+                                            @foreach ($product as $item)
+                                                <option value="{{ $item->product_name }}">
+                                            @endforeach
+                                          </datalist>
                                         <button class="btn btn-custom md-size btn-primary btn-secondary-hover searchbox-btn" type="submit">
                                             <i class="ion-ios-search"></i>
                                         </button>
@@ -46,21 +52,35 @@
                                     <div class="col-md-6 pt-8 pt-md-0">
                                         <div class="product-item text-center">
                                             <div class="product-img">
-                                                <a href="{{ url('/product/'.$name.'/'.$item->product_name) }}">
+                                                <a href="{{ url('product/'.$name.'/'.$item->product_name) }}">
                                                     <img src="{{ asset('assets/uploads/products/images/'.$item->image) }}" alt="Product Image">
                                                 </a>
                                                 <div class="add-action">
                                                     <ul>
-                                                        <li>
-                                                            <a class="btn btn-custom md-size btn-primary btn-secondary-hover" href="#">Add to Cart</a>
-                                                        </li>
+                                                        <form action="{{ route('cart.store') }}" style="width: 100%" method="post" enctype="multipart/form-data">
+                                                            @csrf
+                                                            <input type="hidden" value="{{ $item->id }}" name="id">
+                                                            <input type="hidden" value="{{ $item->product_name }}" name="name">
+                                                            <input type="hidden" value="{{ $item->price }}" name="price">
+                                                            <input type="hidden" value="{{ $item->image }}"  name="image">
+                                                            <input type="hidden" value="1" name="quantity">
+                                                            @if ($item->price != NULL)
+                                                            <li>
+                                                                <button type="submit" class="btn btn-custom md-size btn-primary btn-secondary-hover">Add to Cart</button>
+                                                            </li>
+                                                            @else
+                                                            <li>
+                                                                <a class="btn btn-custom md-size btn-primary btn-secondary-hover" href="{{ url('/contact') }}">Contactez-ous</a>
+                                                            </li>
+                                                            @endif
+                                                          </form>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="product-content py-4">
-                                                <h2 class="title mb-0"><a href="product-detail.html">{{ $item->product_name }}</a></h2>
+                                                <h2 class="title mb-0"><a href="{{ url('product/'.$name.'/'.$item->product_name) }}">{{ $item->product_name }}</a></h2>
                                                 <div class="price-box">
-                                                    <span class="new-price">{{ $item->price }}</span>
+                                                    <span class="new-price">{{ $item->price }} <small>MAD</small></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,24 +88,15 @@
                                 @endforeach
                                 <div class="col-lg-12 pt-10">
                                     <div class="pagination-wrap">
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination pagination-custom justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                                        <i class="ion-ios-arrow-back"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">
-                                                        <i class="fa fa-ellipsis-h"></i>
-                                                    </a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">
-                                                        <i class="ion-ios-arrow-forward"></i>
-                                                    </a>
-                                                </li>
+                                        <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                                            <ul class="pagination">
+                                              <li class="page-item"></li>
+                                            </ul>
+                                            <ul class="pagination-bolock">
+                                              {{ $product->links('layouts.paginationlinks') }}
+                                            </ul> 
+                                            <ul class="pagination">
+                                              <li class="page-item"></li>
                                             </ul>
                                         </nav>
                                     </div>

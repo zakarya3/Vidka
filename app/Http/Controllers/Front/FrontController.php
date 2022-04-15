@@ -50,23 +50,29 @@ class FrontController extends Controller
     public function products_id($name, $id)
     {
         $category = Category::where('name',$name)->first();
-        $id = $category->id;
-        $type = SubCategory::where('categ_id',$id)->get();
-        $id_type = SubCategory::where('categ_id',$id)->pluck('id');
-        $product = Product::whereIn('cate_id',$id_type)->paginate(16);
+        $id_cat = $category->id;
+        $type = SubCategory::where('categ_id',$id_cat)->get();
+        $product = Product::where('cate_id',$id)->paginate(16);
         $cartItems = \Cart::getContent();
         return view('products',compact('product','name','type','cartItems'));
+    }
+    public function search(Request $request)
+    {
+        $name = $request->item;
+        $product = Product::where('product_name',$name)->first();
+        $products = Product::all();
+        $cartItems = \Cart::getContent();
+        return view('product', compact('product','name','cartItems','products'));
     }
 
 
     public function product($cate, $name)
     {
         $category = SubCategory::where('name',$cate)->first();
-        $id = $category->id;
-        $other_prd = Product::where('cate_id',$id)->get()->take(3);
+        $products = Product::all();
         $product = Product::where('product_name',$name)->first();
         $cartItems = \Cart::getContent();
-        return view('product', compact('product','other_prd','cartItems'));
+        return view('product', compact('product','name','cartItems','products'));
     
     }
 
