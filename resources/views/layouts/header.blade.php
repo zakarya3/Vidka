@@ -67,7 +67,7 @@
                             <div class="header-top-right">
                                 <ul class="hassub-item">
                                     <li class="login-info">
-                                        <a href="{{ route('login') }}">Login<span>/ Register</span></a>
+                                        <a href="{{ url('dashboard') }}">Login<span>/ Register</span></a>
                                     </li>
                                     <li class="minicart-wrap">
                                         <a href="#miniCart" class="minicart-btn toolbar-btn">
