@@ -25,7 +25,11 @@
                   <div class="row">
                     <label for="">Marque</label>
                     <select class="form-select"  name="brand">
-                        <option value="">{{ $products->brand->brand_name }}</option>
+                        <option value="@if ($products->brand_id !== null){{ $products->brand_id }} @endif">
+                          @if ($products->brand_id !== null){{ $products->brand->brand_name }}@endif</option>
+                        @foreach ($brand as $item)
+                          <option value="{{ $item->id }}">{{ $item->brand_name }}</option>
+                        @endforeach
                     </select>
                   </div>
                   </div>

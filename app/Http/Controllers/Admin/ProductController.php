@@ -52,7 +52,8 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $category = SubCategory::all();
-        return view('admin.products.edit',compact('products','category'));
+        $brand = Brand::all();
+        return view('admin.products.edit',compact('products','brand','category'));
     }
     public function update(Request $request, $id)
     {

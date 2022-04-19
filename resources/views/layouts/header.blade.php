@@ -73,7 +73,7 @@
                                         <a href="#miniCart" class="minicart-btn toolbar-btn">
                                             <div class="minicart-count">
                                                 <img src="{{ asset('assets/header/icon/cart.png') }}" alt="Cart Icon">
-                                                <span class="quantity">3</span>
+                                                <span class="quantity">{{ Cart::getTotalQuantity()}}</span>
                                             </div>
                                         </a>
                                     </li>
@@ -192,48 +192,40 @@
                 <div class="offcanvas-body">
                     <div class="minicart-content">
                         <div class="minicart-heading">
-                            <h4 class="mb-0">Shopping Cart</h4>
+                            <h4 class="mb-0">Panier</h4>
                             <a href="#" class="button-close"><i class="ion-ios-close-empty"></i></a>
                         </div>
                         <ul class="minicart-list">
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#"><i class="ion-ios-close-empty"></i></a>
-                                <div class="product-item_img">
-                                    <img class="img-full" src="assets/images/product/small-size/1-1-100x103.jpg" alt="Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop.html">Cutting Pliers</a>
-                                    <span class="product-item_quantity">1 x $80.00</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#"><i class="ion-ios-close-empty"></i></a>
-                                <div class="product-item_img">
-                                    <img class="img-full" src="assets/images/product/small-size/1-2-100x103.jpg" alt="Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop.html">Safety Helmet</a>
-                                    <span class="product-item_quantity">1 x $120.00</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#"><i class="ion-ios-close-empty"></i></a>
-                                <div class="product-item_img">
-                                    <img class="img-full" src="assets/images/product/small-size/1-3-100x103.jpg" alt="Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop.html">Jack Hammer Drill</a>
-                                    <span class="product-item_quantity">1 x $230.00</span>
-                                </div>
-                            </li>
+                            @php
+                                $total = 0;
+                            @endphp
+                            @foreach ($cartItems as $item)
+                                <li class="minicart-product product_data">
+                                    <input type="hidden" value="{{ $item->id }}" class="prod_id">
+                                    <div class="product-item_img">
+                                        <img class="img-full" src="{{ asset('assets/uploads/products/images/'.$item->attributes->image) }}" alt="Product Image">
+                                    </div>
+                                    <div class="product-item_content">
+                                        <a class="product-item_title" href="shop.html">{{ $item->name }}</a>
+                                        <span class="product-item_quantity">{{ $item->quantity }} x {{ $item->price }} MAD</span>
+                                    </div>
+                                </li>
+                                @php
+                                    $total += $item->price * $item->quantity;
+                                @endphp
+                            @endforeach
                         </ul>
                     </div>
                     <div class="minicart-item_total">
-                        <span>Subtotal</span>
-                        <span class="ammount">$91.05</span>
+                        <span>Total</span>
+                        <span class="ammount">{{ $total }} MAD</span>
                     </div>
                     <div class="group-btn_wrap d-grid gap-2">
-                        <a href="cart.html" class="btn btn-secondary btn-primary-hover">View Cart</a>
+                        <a @if (Cart::getTotalQuantity() != 0)
+                        href="{{ url('cart') }}"
+                    @else
+                        href="{{ url('/') }}"
+                    @endif class="btn btn-secondary btn-primary-hover">View Cart</a>
                         <a href="checkout.html" class="btn btn-secondary btn-primary-hover">Checkout</a>
                     </div>
                 </div>
