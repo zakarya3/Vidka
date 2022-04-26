@@ -21,12 +21,12 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th class="product_remove">Supprimer</th>
                                                 <th class="product-thumbnail">images</th>
                                                 <th class="cart-product-name">Produit</th>
                                                 <th class="product-price">Prix unitaire</th>
                                                 <th class="product-quantity">Quantité</th>
                                                 <th class="product-subtotal">Total</th>
+                                                <th class="product_remove">Supprimer</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,14 +36,6 @@
                                             @foreach ($cartItems as $item)
                                                 <tr class="product_data">
                                                     <input type="hidden" value="{{ $item->id }}" class="prod_id">
-                                                    <td class="product_remove">
-                                                        <form action="{{ route('cart.remove') }}" method="POST">
-                                                            @csrf
-                                                            <input type="hidden" value="{{ $item->id }}" name="id">
-                                                            <button type="submit"><i class="ion-android-delete" title="Remove"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
                                                     <td class="product-thumbnail">
                                                         <a href="#">
                                                             <img src="{{ asset('assets/uploads/products/images/'.$item->attributes->image) }}" style="width: 25%" alt="Cart Thumbnail">
@@ -66,6 +58,13 @@
                                                         $total_price = $item->quantity * $item->price;
                                                     @endphp
                                                     <td class="product-subtotal"><span class="amount">{{ $total_price }} MAD</span></td>
+                                                    <td class="product_remove">
+                                                        <form action="{{ route('cart.remove') }}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" value="{{ $item->id }}" name="id">
+                                                            <button class="btn btn-danger" type="submit"><i class="ion-android-delete" title="Remove"></i></button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                                 @php
                                                     $total += $item->price * $item->quantity;
@@ -81,9 +80,12 @@
                                             <ul>
                                                 <li>Total <span>{{ $total }} MAD</span></li>
                                             </ul>
-                                            <div class="button-wrap pt-6">
-                                                <button class="btn btn-secondary btn-primary-hover" type="submit">Proceed to checkout</button>
-                                            </div>
+                                            <form action="{{ route('check.list') }}" method="post">
+                                                <input type="hidden" value="{{ $total }}" name="">
+                                                <div class="button-wrap pt-6">
+                                                    <a href="{{ url('checkout') }}" class="btn btn-secondary btn-primary-hover" type="submit">Commander</a>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

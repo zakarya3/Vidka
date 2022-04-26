@@ -97,7 +97,7 @@
                                     <nav class="main-nav">
                                         <ul>
                                             <li class="drop-holder">
-                                                <a href="index.html"><span>Acceuil</span></a>
+                                                <a href="{{ url('/') }}"><span>Acceuil</span></a>
                                             </li>
                                             <li class="drop-holder">
                                                 <a href="{{ url('/') }}"><span>Produits</span></a>
@@ -110,16 +110,16 @@
                                                 </ul>
                                             </li>
                                             <li class="">
-                                                <a href="contact.html"><span>Projets</span></a>
+                                                <a href=""><span>Projets</span></a>
                                             </li>
                                             <li class="">
-                                                <a href="contact.html"><span>Références</span></a>
+                                                <a href=""><span>Références</span></a>
                                             </li>
                                             <li class="">
-                                                <a href="contact.html"><span>Contact</span></a>
+                                                <a href="{{ url('/contact') }}"><span>Contact</span></a>
                                             </li>
                                             <li class="separator">
-                                                <a href="contact.html"><span>Mes commandes</span></a>
+                                                <a href="{{ url('myorders') }}"><span>Mes commandes</span></a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -163,22 +163,22 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="">
                                             <span class="mm-text">Projets</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="">
                                             <span class="mm-text">Références</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">
+                                        <a href="{{ url('/contact') }}l">
                                             <span class="mm-text">Contact</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="{{ url('myorders') }}">
                                             <span class="mm-text">Mes commandes</span>
                                         </a>
                                     </li>

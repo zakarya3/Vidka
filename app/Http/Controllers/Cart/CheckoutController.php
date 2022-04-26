@@ -32,6 +32,7 @@ class CheckoutController extends Controller
 
     public function paymentmethod(Request $request)
     {
+        $cartItems = \Cart::getContent();
         $user = User::where('name',$request->session()->get('name'))->first();
         $order = Order::where('user_id',$user->id)->latest('created_at','desc')->first();
         $orders = OrderItem::where('order_id',$order->id)->get();
@@ -53,6 +54,6 @@ class CheckoutController extends Controller
             $message->subject('Nouvelle commande');
         });
         \Cart::clear();
-        return view('checkout-complete',compact('user'));
+        return view('checkout-complete',compact('cartItems','user'));
     }
 }

@@ -26,6 +26,41 @@
                                                 <img src="{{ asset('assets/uploads/products/images/'.$product->image) }}" alt="Product Image">
                                             </div>
                                         </div>
+                                        @if ($product->image1 != NULL)
+                                        <div class="swiper-slide">
+                                            <div class="single-img zoom">
+                                                <img src="{{ asset('assets/uploads/products/images/'.$product->image1) }}" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if ($product->image2 != NULL)
+                                        <div class="swiper-slide">
+                                            <div class="single-img zoom">
+                                                <img src="{{ asset('assets/uploads/products/images/'.$product->image2) }}" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if ($product->image3 != NULL)
+                                        <div class="swiper-slide">
+                                            <div class="single-img zoom">
+                                                <img src="{{ asset('assets/uploads/products/images/'.$product->image3) }}" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if ($product->image4 != NULL)
+                                        <div class="swiper-slide">
+                                            <div class="single-img zoom">
+                                                <img src="{{ asset('assets/uploads/products/images/'.$product->image4) }}" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if ($product->image5 != NULL)
+                                        <div class="swiper-slide">
+                                            <div class="single-img zoom">
+                                                <img src="{{ asset('assets/uploads/products/images/'.$product->image5) }}" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                     <!-- Add Arrows -->
                                     <div class="swiper-button-next"></div>
@@ -39,7 +74,7 @@
                                 <div class="product-detail-review pb-7">
                                     <div class="price-box">
                                         @if ($product->price != null)
-                                            <span class="new-price">{{ $product->price }}</span>
+                                            <span class="new-price">{{ $product->price }} <small>DH</small></span>
                                         @else
                                             <span class="new-price">Contactez-nous!</span>
                                         @endif
@@ -54,7 +89,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <p class="product-desc mb-3">{{ $product->product_description }}</p>
+                                <p class="product-desc mb-3"><p>@php
+                                    echo $product->product_description;
+                                @endphp</p></p>
                                 <div class="product-detail-info pb-3">
                                     @if ($product->qty !== null && $product->qty > 0)
                                         <span class="stock pb-2">Stock: <strong class="text-primary">In Stock</strong></span>

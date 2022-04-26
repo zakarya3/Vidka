@@ -65,7 +65,7 @@ class CartPController extends Controller
         $order->email = $email;
         $order->phone = $phone;
         $order->address = $address;
-        $order->tracking_no = 'Flaster-'.rand(1111,9999);
+        $order->tracking_no = 'Vidka-'.rand(1111,9999);
         $order->save();
         foreach ($cartItems as $item) {
             OrderItem::create([
@@ -83,7 +83,7 @@ class CartPController extends Controller
         Session::put('phone',$phone);
         Session::put('email',$email);
         Session::put('address',$address);
-        return view('checkout-payment', compact('cartItems','total'));
+        return view('checkout-payment', compact('cartItems', 'total'));
     }
 
     public function updateCart(Request $request)
