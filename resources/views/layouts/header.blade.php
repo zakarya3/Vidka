@@ -113,7 +113,7 @@
                                                 <a href=""><span>Projets</span></a>
                                             </li>
                                             <li class="">
-                                                <a href=""><span>Références</span></a>
+                                                <a href="#ref"><span>Références</span></a>
                                             </li>
                                             <li class="">
                                                 <a href="{{ url('/contact') }}"><span>Contact</span></a>

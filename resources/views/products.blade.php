@@ -1,11 +1,11 @@
 @extends('layouts.header')
 @section('content')
             <!-- Begin Breadcrumb Area -->
-            <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('assets/breadcrumb/bg/1.jpg') }}">
+            <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('assets/uploads/categories/images/'.$image->image) }}" style="background-position: center; background-size: contain">
                 <div class="container">
                     <div class="breadcrumb-content">
-                        <span class="breadcrumb-sub-title">Nos Produits</span>
-                        <h1 class="breadcrumb-title mb-1">{{ $name }}</h1>
+                        <span class="breadcrumb-sub-title" style="color: rgb(228, 4, 36)">Nos Produits</span>
+                        <h1 class="breadcrumb-title mb-1" style="color: rgb(228, 4, 36)">{{ $name }}</h1>
                         <p class="breadcrumb-desc font-size-20">Boutique</p>
                     </div>
                 </div>

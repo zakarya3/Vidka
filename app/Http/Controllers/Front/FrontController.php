@@ -38,8 +38,9 @@ class FrontController extends Controller
             $id = $category->id;
             $type = SubCategory::where('categ_id',$id)->get();
             $id_type = SubCategory::where('categ_id',$id)->pluck('id');
+            $image = Category::where('name',$name)->first();
             $product = Product::whereIn('cate_id',$id_type)->paginate(16);
-            return view('products',compact('type','name','product','cartItems'));
+            return view('products',compact('type','name','product','cartItems','image'));
         }
         else {
             $cartItems = \Cart::getContent();
@@ -53,8 +54,9 @@ class FrontController extends Controller
         $id_cat = $category->id;
         $type = SubCategory::where('categ_id',$id_cat)->get();
         $product = Product::where('cate_id',$id)->paginate(16);
+        $image = Category::where('name',$name)->first();
         $cartItems = \Cart::getContent();
-        return view('products',compact('product','name','type','cartItems'));
+        return view('products',compact('product','name','type','cartItems','image'));
     }
     public function search(Request $request)
     {

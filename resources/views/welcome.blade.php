@@ -104,7 +104,7 @@
 
 
 <!-- Begin Brand Area -->
-<div class="brand-area pt-140 pb-6" data-bg-image="">
+<div class="brand-area pt-140 pb-6" data-bg-image="" id="ref">
     <div class="container">
         <div class="section-title-area pb-70">
             <div class="section-title with-border pb-5 pb-lg-0">

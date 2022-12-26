@@ -1,5 +1,11 @@
 @extends('layouts.header')
 @section('content')
+<style>
+    table, th, td {
+        width: 100% !important;
+      border: 1px solid;
+    }
+    </style>
 <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('assets/breadcrumb/bg/1.jpg') }}">
     <div class="container">
         <div class="breadcrumb-content">
@@ -12,7 +18,7 @@
 
 <!-- Begin Main Content Area -->
 <main class="main-content">
-    <div class="product-detail-area py-140 product_data"">
+    <div class="product-detail-area py-140 product_data">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -97,7 +103,7 @@
                                         <span class="stock pb-2">Stock: <strong class="text-primary">In Stock</strong></span>
                                     @endif
                                     @if ($product->product_reference !== null)
-                                        <span class="sku">Ref: 245KBJTU</span>
+                                        <span class="sku">Ref: {{ $product->product_reference }}</span>
                                     @endif
                                 </div>
                                 <div class="product-qty-with-btn pb-3">
