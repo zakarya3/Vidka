@@ -20,6 +20,26 @@
 
     <!-- CSS
     ============================================ -->
+    <style>
+        /*PRE LOADER*/
+.preloader {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 999999;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.preloader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+    </style>
 
     <!-- Vendor CSS (Contain Bootstrap, Icon Fonts) -->
     <link rel="stylesheet" href="{{ asset('frontend/css/vendor/ionicons.min.css') }}" />
@@ -35,6 +55,9 @@
 </head>
 
 <body>
+    <div class="preloader">
+		<img src="{{ asset('assets/logo/Pulsating engine.gif') }}" alt="Pre-loader">
+	</div>
 
     <div class="main-wrapper">
 
@@ -364,6 +387,7 @@
 
 <!--Main JS (Common Activation Codes)-->
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+<script src="{{ asset('frontend/js/functions.js') }}"></script>
 </body>
 
 </html>
