@@ -13,8 +13,8 @@
                             <span class="sub-title mb-1">Vidka</span>
                             <h2 class="title mb-3">Importateur et distributeur <br> des <span>véhicules et engins</span></h2>
                             <div class="button-wrap">
-                                <a class="btn btn-custom btn-secondary btn-white-hover me-3" href="project.html">Plus de détails</a>
-                                <a class="btn btn-custom btn-primary btn-white-hover" href="contact.html">Contactez-nous!</a>
+                                <a class="btn btn-custom btn-secondary btn-white-hover me-3" href="{{ url('/contact') }}">Plus de détails</a>
+                                <a class="btn btn-custom btn-primary btn-white-hover" href="{{ url('/contact') }}">Contactez-nous!</a>
                             </div>
                         </div>
                     </div>
@@ -27,8 +27,8 @@
                             <span class="sub-title mb-1">Vidka</span>
                             <h2 class="title mb-3">La fourtniture de pieces de rechanges <br> <span>negoce et travaux divers</span></h2>
                             <div class="button-wrap">
-                                <a class="btn btn-custom btn-secondary btn-white-hover me-3" href="project.html">Plus de détails</a>
-                                <a class="btn btn-custom btn-primary btn-white-hover" href="contact.html">Contactez-nous!</a>
+                                <a class="btn btn-custom btn-secondary btn-white-hover me-3" href="{{ url('/contact') }}">Plus de détails</a>
+                                <a class="btn btn-custom btn-primary btn-white-hover" href="{{ url('/contact') }}">Contactez-nous!</a>
                             </div>
                         </div>
                     </div>
