@@ -118,52 +118,52 @@
                     <div class="swiper-wrapper align-items-center">
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/1.jpg') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/1.jpg') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/2.jpg') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/2.jpg') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/3.png') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/3.png') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/4.jpg') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/4.jpg') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/5.jpg') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/5.jpg') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/6.png') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/6.png') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/7.png') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/7.png') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/8.png') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/8.png') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/1.jpg') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/1.jpg') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a class="brand-item" href="#">
-                                <img src="{{ asset('assets/brand/6.png') }}" alt="Brand Image">
+                                <img src="{{ asset('assets/brand/6.png') }}" style="height: 100%" alt="Brand Image">
                             </a>
                         </div>
                     </div>
@@ -350,13 +350,13 @@
                 <div class="swiper-container team-member-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/team/medium-size/Flaster.png') }}" alt="">
+                            <img src="{{ asset('assets/team/medium-size/Flaster.png') }}" style="height: 100%" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/team/medium-size/sbtech.png') }}" alt="">
+                            <img src="{{ asset('assets/team/medium-size/sbtech.png') }}" style="height: 100%" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/team/medium-size/swiss.png') }}" alt="">
+                            <img src="{{ asset('assets/team/medium-size/swiss.png') }}" style="height: 100%" alt="">
                         </div>
 
                     </div>
