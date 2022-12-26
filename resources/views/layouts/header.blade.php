@@ -325,7 +325,7 @@
                 <div class="col-md-6 col-sm-4">
                     <ul class="social-link">
                         <li class="facebook">
-                            <a href="#" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                            <a href="https://www.facebook.com/profile.php?id=100078612774383" target="_blank" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
@@ -343,7 +343,9 @@
                 </div>
                 <div class="col-md-6 col-sm-8 align-self-center">
                     <div class="copyright">
-                        <span class="copyright-text">© 2021 Vidka Made with <i class="fa fa-heart text-danger"></i> by <a href="" rel="noopener" target="_blank">Vidka</a> </span>
+                        <span class="copyright-text">© <script>
+                            document.write(new Date().getFullYear())
+                          </script> Vidka Made with <i class="fa fa-heart text-danger"></i> by <a href="" rel="noopener" target="_blank">Vidka</a> </span>
                     </div>
                 </div>
             </div>
