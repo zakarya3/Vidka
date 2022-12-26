@@ -93,7 +93,7 @@ class FrontController extends Controller
         $message1 = $request->message;
         $data = ['name'=> $name, 'phone'=> $phone, 'email'=> $email, 'subject'=> $subject, 'message1'=> $message1];
         Mail::send('message', $data, function ($message) use ($email) {
-            $message->to('zakaria.aanni@gmail.com');
+            $message->to('vidka@vidka.ma');
             $message->subject('Question?');
         });
         return redirect()->back();
