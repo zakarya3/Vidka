@@ -16858,7 +16858,6 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .main-nav > ul > li.separator a span {
-  background-image: url("../images/header/icon/separator.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
