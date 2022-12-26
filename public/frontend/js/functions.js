@@ -217,7 +217,7 @@ var e = {
                 preloader.className += ' animate__animated animate__fadeOut';
                 setTimeout(function(){
                     preloader.style.display = 'none';
-                }, 200);
+                }, 4000);
             }
         };
     },
