@@ -56,7 +56,7 @@
 
 <body>
     <div class="preloader">
-		<img src="{{ asset('assets/logo/Pulsating engine.gif') }}" alt="Pre-loader">
+		<img src="{{ asset('assets/logo/Pulsating engine.gif') }}" style="width: 10%" alt="Pre-loader">
 	</div>
 
     <div class="main-wrapper">
@@ -68,13 +68,29 @@
                     <div class="row align-items-center">
                         <div class="offset-xl-2 offset-lg-3 col-xl-4 col-lg-5 d-none d-lg-block">
                             <div class="header-top-left ml-8">
-                                <div class="contact-number">
-                                    <img src="{{ asset('assets/header/icon/phone.png') }}" alt="Phone Icon">
-                                    <a href="tel:+212 528232329">+212 528 23 23 29</a>
-                                </div>
-                                <div class="time-schedule">
-                                    <img src="{{ asset('assets/header/icon/clock.png') }}" alt="Clock Icon">
-                                    <span>9.00 am - 6.00 pm</span>
+                                <div class="col-md-6 col-sm-4">
+                                    <ul class="social-link">
+                                        <li class="facebook">
+                                            <a href="https://www.facebook.com/profile.php?id=100078612774383" target="_blank" data-tippy="Langues" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="fa fa-globe"></i>
+                                            </a>
+                                        </li>
+                                        <li class="facebook">
+                                            <a href="https://www.facebook.com/profile.php?id=100078612774383" target="_blank" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="twitter">
+                                            <a href="mailto:vidka@vidka.ma" data-tippy="Email" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                        <li class="instagram">
+                                            <a href="https://www.instagram.com/vidka.sarl/" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -88,10 +104,11 @@
                         </div>
                         <div class="col-xl-6 col-xl-5 col-lg-4 col-sm-6">
                             <div class="header-top-right">
+                                <div class="contact-number">
+                                    <img src="{{ asset('assets/header/icon/phone.png') }}" alt="Phone Icon">
+                                    <a href="tel:+212 528232329">+212 528 23 23 29</a>
+                                </div>
                                 <ul class="hassub-item">
-                                    <li class="login-info">
-                                        <a href="{{ url('dashboard') }}">Login<span>/ Register</span></a>
-                                    </li>
                                     <li class="minicart-wrap">
                                         <a href="#miniCart" class="minicart-btn toolbar-btn">
                                             <div class="minicart-count">
@@ -111,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main-header header-sticky" data-bg-color="#353e46">
+            <div class="main-header header-sticky">
                 <div class="container">
                     <div class="main-header_nav">
                         <div class="row align-items-center">
@@ -151,7 +168,7 @@
                         </div>
                     </div>
                     <div class="header-logo-wrap d-none d-lg-flex">
-                        <img src="{{ asset('assets/logo/logo.png') }}" alt="" style="width: 80%; height: 100%; object-fit: contain; margin: auto;">
+                        <img src="{{ asset('assets/logo/logo.png') }}" alt="" style="width: 38%; height: 85%; object-fit: contain; margin: auto;">
                     </div>
                 </div>
             </div>
@@ -165,7 +182,7 @@
                             <nav class="offcanvas-navigation">
                                 <ul class="mobile-menu">
                                     <li>
-                                        <a href="index.html">
+                                        <a href="index.html" style="color: black !important">
                                             <span class="mm-text">Acceuil</span>
                                         </a>
                                     </li>
@@ -297,7 +314,7 @@
                                 <a href="#">Services</a>
                             </li>
                             <li>
-                                <a href="#">Partenaires</a>
+                                <a href="{{ url('dashboard') }}">Login<span>/ Register</span></a>
                             </li>
                         </ul>
                     </div>
